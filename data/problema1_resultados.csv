@@ -1,0 +1,10 @@
+Algoritmo,Cenario,Tempo(s),Comparacoes,Trocas
+Bubble,Aleatorio,1.715813,449942514,225521470
+Insertion,Aleatorio,0.110533,225551463,225521470
+Selection,Aleatorio,0.836222,449985000,29982
+Bubble,Ordenado,0.000013,29999,0
+Insertion,Ordenado,0.000032,29999,0
+Selection,Ordenado,0.834603,449985000,0
+Bubble,Inverso,2.209522,449985000,449985000
+Insertion,Inverso,0.223147,449985000,449985000
+Selection,Inverso,0.830184,449985000,15000
