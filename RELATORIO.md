@@ -56,8 +56,6 @@ Comparar  o desempenho de Bubblesort, Insertionsort e Selectionsort em diferente
 |Selection|Ordenado|0.834603|449985000|0|
 |Selection|Inverso|0.830184|449985000|15000|
 
-*Fonte: Arquivo `data/problema1_resultados.csv`*
-
 ### Gráficos
 
 ![Gráfico de Tempo por Cenário](data/problema1_tempo.png)
@@ -117,8 +115,6 @@ Comparar o desempenho do Heapsort versus Quicksort clássico em um cenário dege
 |Desvio Padrão (s)|	0.000526|	0.0000236|
 |Mínimo (s)|	0.007051|	0.000182|
 |Máximo (s)|	0.008767|	0.000237|
-
-*Fonte: Arquivo `data/problema2_resultados.csv`*
 
 ### Gráficos
 
