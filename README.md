@@ -27,14 +27,14 @@ Notebook no sistema (NitroSense): "Utilização Diaria"
 ## 3. PROBLEMA 1: Custo de Operações Teóricas vs. Tempo Real
 
 ### Objetivo
-Comparar empiricamente o desempenho de Bubblesort, Insertionsort e Selectionsort em diferentes cenários (aleatório, melhor caso e pior caso).
+Comparar  o desempenho de Bubblesort, Insertionsort e Selectionsort em diferentes cenários (aleatório, melhor caso e pior caso).
 
 ### Tamanho e Cenários
 - **Tamanho do vetor:** 30.000 elementos
 - **Cenários testados:**
-  1. Aleatório: elementos distribuídos uniformemente
-  2. Melhor Caso: vetor perfeitamente ordenado em ordem crescente
-  3. Pior Caso: vetor ordenado em ordem estritamente decrescente
+  1. Aleatório: elementos distribuídos de forma aleatória
+  2. Melhor Caso: vetor ordenado em ordem crescente
+  3. Pior Caso: vetor ordenado em ordem decrescente
 
 ### Resultados
 
@@ -68,17 +68,11 @@ Comparar empiricamente o desempenho de Bubblesort, Insertionsort e Selectionsort
 
 **Resposta:**
 
-1. **Qual foi mais rápido no vetor aleatório?**
-   - O Insertion Sort foi o mais rápido.
+Nos testes com vetores aleatórios, o Insertion Sort apresentou um tempo de execução menor que o Selection Sort. Esse resultado é justificado pelo comportamento estrutural de cada algoritmo frente à disposição inicial dos dados. O Selection Sort executa uma varredura fixa, percorrendo todo o restante do vetor para localizar o menor valor. Por se tratar de uma busca exaustiva, o total de comparações permanece constante, independentemente do embaralhamento prévio.
 
-2. **Por que Selection tem comparações iguais em qualquer cenário?**
-   - O Selection Sort possui um algoritmo de varredura fixa, no qual ele passa por todo o restante do vetor procurando o menor valor. Sendo uma busca exaustiva, o número de comparações será sempre o mesmo, não importando como os dados estão embaralhados inicialmente.
+Em contrapartida, o Insertion Sort tira proveito da ordenação parcial dos elementos. O método interrompe o laço de busca imediatamente ao encontrar a posição correta e desloca os dados fora de lugar apenas o estritamente necessário.
 
-3. **Por que Insertion varia tanto?**
-   - O Insertion Sort tira proveito de dados parcial ou quase ordenados, pois ele interrompe o laço de busca assim que encontra a posição correta, "deslizando" os elementos fora de lugar apenas o estritamente necessário.
-
-4. **Análise experimental vs. Teórica:**
-   - Teoricamente, ambos os algoritmos possuem complexidade $O(N^2)$, o que significa que apresentam um crescimento quadrático de tempo. No entanto, a notação assintótica ignora as constantes matemáticas ocultas. O Selection Sort exige uma constante fixa de comparações (aproximadamente $\frac{1}{2}N^2$, resultante da soma das varreduras em cada passo). Por outro lado, o Insertion Sort tira vantagem da aleatoriedade dos dados, o que reduz sua constante no caso médio para cerca de $\frac{1}{4}N^2$. Na prática, essa diferença de constantes faz com que o Insertion Sort seja visivelmente mais rápido em cenários aleatórios.
+Do ponto de vista teórico, ambos compartilham a complexidade assintótica $O(N^2)$, o que indica um tempo de execução de crescimento quadrático. Todavia, essa notação omite as constantes. O Selection Sort exige uma constante fixa de comparações, estimada em $\frac{1}{2}N^2$ devido à soma das varreduras iterativas. Já o Insertion Sort utiliza a aleatoriedade para reduzir essa constante no caso médio, atingindo aproximadamente $\frac{1}{4}N^2$. Essa distinção matemática explica o motivo pelo qual o Insertion Sort demonstra uma velocidade visivelmente maior na prática em cenários aleatórios.
 
 ---
 
@@ -136,9 +130,9 @@ Comparar o desempenho do Heapsort versus Quicksort clássico em um cenário dege
 
 O desempenho do *Heapsort* mostrou-se significativamente superior ao do *Quicksort*, com um tempo médio de 0.0002023 segundos em contraste com os 0.007751 segundos registrados por este último. Com desvios padrão baixos em ambos os casos, essa diferença indica que o *Heapsort* foi aproximadamente 38 vezes mais rápido.
 
-A acentuada perda de eficiência do *Quicksort* em dados ordenados resulta da seleção inadequada do pivô, configurando o chamado caso degenerado. Quando o algoritmo escolhe rotineiramente o primeiro ou o último elemento de um vetor já ordenado (ou inversamente ordenado), ocorre o pior particionamento possível. Nesse cenário, o vetor não é dividido ao meio, pois o pivô representa o valor extremo do segmento. Isso faz com que a profundidade da árvore de recursão, que deveria ser $O(\log n)$, cresça de forma linear para $O(n)$. O aumento expressivo no número de comparações eleva a complexidade de tempo de $O(n \log n)$ para $O(n^2)$.
+A perda de eficiência do *Quicksort* em dados ordenados resulta da seleção inadequada do pivô, configurando o caso degenerado. Quando o algoritmo escolhe rotineiramente o primeiro ou o último elemento de um vetor já ordenado (ou inversamente ordenado), ocorre o pior particionamento possível. Nesse cenário, o vetor não é dividido ao meio, pois o pivô representa o valor extremo do segmento. Isso faz com que a profundidade da árvore de recursão, que deveria ser $O(\log n)$, cresça de forma linear para $O(n)$. O aumento no número de comparações eleva a complexidade de tempo de $O(n \log n)$ para $O(n^2)$.
 
-Em contrapartida, o *Heapsort* mantém a sua eficiência porque o algoritmo estabelece um limite rigoroso para a estrutura dos dados. A manipulação ocorre por meio de uma árvore binária quase completa, conhecida como *Heap* Máximo, o que assegura que o percurso da raiz até a folha seja sempre logarítmico, independentemente da ordenação inicial dos dados.
+Em contrapartida, o *Heapsort* mantém a sua eficiência porque o algoritmo estabelece um limite para a estrutura dos dados. A manipulação ocorre por meio de uma árvore binária quase completa, conhecida como *Heap* Máximo, o que assegura que o percurso da raiz até a folha seja sempre logarítmico, independentemente da ordenação inicial dos dados.
 
 ---
 
@@ -150,7 +144,7 @@ Comparar o desempenho do Insertionsort versus Shellsort em um cenário com dados
 ### Tamanho e Cenário
 - **Tamanho do vetor:** 50.000 elementos
 - **Tipo de vetor:** Quase-ordenado
-  - Começa como um vetor perfeitamente ordenado
+  - Começa como um vetor  ordenado
   - 0,5% dos elementos são aleatoriamente trocados com seus vizinhos
   - Total: ~250 elementos perturbados
 - **Sequência de gaps do Shellsort:** N/2, N/4, N/8, ..., 1
@@ -178,9 +172,9 @@ Comparar o desempenho do Insertionsort versus Shellsort em um cenário com dados
 
 Em um cenário de dados quase ordenados, o Insertionsort obteve um desempenho consideravelmente superior ao Shellsort. O Insertionsort concluiu a ordenação em 0.000084 segundos e realizou 50.247 comparações. O Shellsort precisou de 0.000710 segundos e executou 700.254 comparações. Esses valores demonstram que o Insertionsort foi aproximadamente 8,4 vezes mais rápido.
 
-Os dados evidenciam a ineficiência do Shellsort neste contexto específico. Ambos os algoritmos realizaram exatamente 248 deslocamentos, o que é natural, pois poucos elementos precisavam de reposicionamento. A diferença drástica de custo computacional ocorreu na etapa de identificação desses movimentos.
+Os dados evidenciam a ineficiência do Shellsort neste contexto específico. Ambos os algoritmos realizaram exatamente 248 deslocamentos, pois poucos elementos precisavam de reposicionamento. A diferença de custo computacional ocorreu na etapa de identificação desses movimentos.
 
-O Insertionsort apresenta alta eficiência em dados quase ordenados porque a condição do seu laço while falha quase imediatamente. O algoritmo praticamente apenas percorre o vetor realizando uma única comparação por elemento, sem a necessidade de arrastá-los continuamente.
+O Insertionsort apresenta alta eficiência em dados quase ordenados porque a condição do seu laço while falha quase imediatamente. O algoritmo apenas percorre o vetor realizando uma única comparação por elemento, sem a necessidade de arrastá-los continuamente.
 
 Por outro lado, o Shellsort foi desenvolvido para corrigir a lentidão do Insertionsort ao mover elementos para os extremos do vetor. Para isso, ele utiliza saltos distantes (gaps, na sequência N/2, N/4, N/8). Contudo, em vetores quase ordenados, esses saltos geram um enorme desperdício de processamento. O algoritmo gasta tempo e recursos realizando verificações redundantes em posições que já estão na ordem correta antes de chegar ao espaçamento unitário.
 
