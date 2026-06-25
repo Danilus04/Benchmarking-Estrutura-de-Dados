@@ -68,17 +68,11 @@ Comparar empiricamente o desempenho de Bubblesort, Insertionsort e Selectionsort
 
 **Resposta:**
 
-1. **Qual foi mais rápido no vetor aleatório?**
-   - O Insertion Sort foi o mais rápido.
+Nos testes com vetores aleatórios, o Insertion Sort apresentou um tempo de execução menor que o Selection Sort. Esse resultado é justificado pelo comportamento estrutural de cada algoritmo frente à disposição inicial dos dados. O Selection Sort executa uma varredura fixa, percorrendo todo o restante do vetor para localizar o menor valor. Por se tratar de uma busca exaustiva, o total de comparações permanece constante, independentemente do embaralhamento prévio.
 
-2. **Por que Selection tem comparações iguais em qualquer cenário?**
-   - O Selection Sort possui um algoritmo de varredura fixa, no qual ele passa por todo o restante do vetor procurando o menor valor. Sendo uma busca exaustiva, o número de comparações será sempre o mesmo, não importando como os dados estão embaralhados inicialmente.
+Em contrapartida, o Insertion Sort tira proveito da ordenação parcial dos elementos. O método interrompe o laço de busca imediatamente ao encontrar a posição correta e desloca os dados fora de lugar apenas o estritamente necessário.
 
-3. **Por que Insertion varia tanto?**
-   - O Insertion Sort tira proveito de dados parcial ou quase ordenados, pois ele interrompe o laço de busca assim que encontra a posição correta, "deslizando" os elementos fora de lugar apenas o estritamente necessário.
-
-4. **Análise experimental vs. Teórica:**
-   - Teoricamente, ambos os algoritmos possuem complexidade $O(N^2)$, o que significa que apresentam um crescimento quadrático de tempo. No entanto, a notação assintótica ignora as constantes matemáticas ocultas. O Selection Sort exige uma constante fixa de comparações (aproximadamente $\frac{1}{2}N^2$, resultante da soma das varreduras em cada passo). Por outro lado, o Insertion Sort tira vantagem da aleatoriedade dos dados, o que reduz sua constante no caso médio para cerca de $\frac{1}{4}N^2$. Na prática, essa diferença de constantes faz com que o Insertion Sort seja visivelmente mais rápido em cenários aleatórios.
+Do ponto de vista teórico, ambos compartilham a complexidade assintótica $O(N^2)$, o que indica um tempo de execução de crescimento quadrático. Todavia, essa notação omite as constantes matemáticas ocultas. O Selection Sort exige uma constante fixa de comparações, estimada em $\frac{1}{2}N^2$ devido à soma das varreduras iterativas. Já o Insertion Sort utiliza a aleatoriedade para reduzir essa constante no caso médio, atingindo aproximadamente $\frac{1}{4}N^2$. Essa distinção matemática explica o motivo pelo qual o Insertion Sort demonstra uma velocidade visivelmente maior na prática em cenários aleatórios.
 
 ---
 
