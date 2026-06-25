@@ -9,6 +9,10 @@
 - Nome: Rafael Machado Wanner
 - Matrícula: a2021013
 
+**Repositório GitHub:**
+
+- Link: [https://github.com/Danilus04/Benchmarking-Estrutura-de-Dados](https://github.com/Danilus04/Benchmarking-Estrutura-de-Dados)
+
 ---
 
 ## 2. AMBIENTE DE TESTE
