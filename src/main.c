@@ -6,7 +6,7 @@ void problema1() {
     printf("Tamanho: 30.000 elementos\n\n");
     
     int N = 30000;
-    FILE *fp = fopen("../data/problema1_resultados.csv", "w");
+    FILE *fp = fopen("data/problema1_resultados.csv", "w");
     if (fp == NULL) {
         perror("Erro ao abrir arquivo de dados");
         return;
@@ -89,7 +89,7 @@ void problema2() {
     printf("Executando 10 vezes cada para calcular média e desvio padrão\n\n");
     
     int N = 5000;
-    FILE *fp = fopen("../data/problema2_resultados.csv", "w");
+    FILE *fp = fopen("data/problema2_resultados.csv", "w");
     if (fp == NULL) {
         perror("Erro ao abrir arquivo de dados");
         return;
@@ -161,7 +161,7 @@ void problema2() {
            media_heap, std_heap, min_heap, max_heap);
 
     // Gravar resumo em arquivo
-    FILE *fres = fopen("../data/RESUMO_RESULTADOS.txt", "w");
+    FILE *fres = fopen("data/RESUMO_RESULTADOS.txt", "w");
     if (fres != NULL) {
         fprintf(fres, "PROBLEMA 2 - Quicksort vs Heapsort (vetor ordenado)\n\n");
         fprintf(fres, "| Métrica | Quicksort | Heapsort |\n");
@@ -188,7 +188,7 @@ void problema3() {
     printf("Tamanho: 50.000 elementos (0.5%% perturbado)\n\n");
     
     int N = 50000;
-    FILE *fp = fopen("../data/problema3_resultados.csv", "w");
+    FILE *fp = fopen("data/problema3_resultados.csv", "w");
     if (fp == NULL) {
         perror("Erro ao abrir arquivo de dados");
         return;

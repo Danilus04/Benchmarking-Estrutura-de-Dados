@@ -184,19 +184,42 @@ Conclui-se que a premissa do Shellsort é excelente para vetores grandes, aleat�
 
 ### Compilação
 
+A compilação do projeto é realizada por meio do **Makefile**, utilizando o comando:
+
 ```bash
-cd src/
-gcc -O2 -Wall -Wextra -lm algoritmos.c main.c -o benchmarking
+make
 ```
+
+ou, de forma equivalente,
+
+```bash
+make build
+```
+
+Esse comando compila os arquivos-fonte `algoritmos.c` e `main.c`, gerando o executável `benchmarking.exe` na pasta `src`.
 
 ### Execução
 
+Para compilar o projeto (caso necessário), executar o benchmark e salvar automaticamente os resultados na pasta `data`, utiliza-se:
+
 ```bash
-./benchmarking
+make run
 ```
+
+Os arquivos de resultados são gerados automaticamente no diretório `data`.
 
 ### Geração de Gráficos
 
+Após a execução dos benchmarks, os gráficos podem ser gerados utilizando:
+
 ```bash
-python3 gerar_graficos.py
+python gerar_graficos.py
+```
+
+### Limpeza dos Arquivos Gerados
+
+Para remover o executável e os arquivos de saída gerados durante a execução, utiliza-se:
+
+```bash
+make clean
 ```
